@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36968fe0-46bb-4d32-98e4-ae93fbc6f7da" name="Default Changelist" comment="" />
+    <list default="true" id="36968fe0-46bb-4d32-98e4-ae93fbc6f7da" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/checkout-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/checkout-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/home-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/home-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/payment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/product-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/product-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce_app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce_app/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce_app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media_root/image/wp1971576-need-for-speed-rivals-wallpapers.jpg" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +43,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1YSK8ZR4VPZL8Sim9Zk9Afjn0K6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../django-ecommerce-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Hospital-Management-master" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -85,10 +101,34 @@
       <workItem from="1582978025590" duration="8563000" />
       <workItem from="1582988444553" duration="11752000" />
       <workItem from="1583006454027" duration="7211000" />
+      <workItem from="1583020422658" duration="979000" />
+      <workItem from="1585422332403" duration="3759000" />
+      <workItem from="1585568665406" duration="428000" />
+      <workItem from="1585569138457" duration="9000" />
+      <workItem from="1585584559594" duration="43000" />
+      <workItem from="1585835080615" duration="473000" />
+      <workItem from="1585867482121" duration="118000" />
+      <workItem from="1586047914900" duration="2667000" />
+      <workItem from="1586908285486" duration="170000" />
+      <workItem from="1586909382604" duration="453000" />
+      <workItem from="1586910505084" duration="50000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

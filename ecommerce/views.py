@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Item, Order, OrderItem, Address, Payment, Coupon, Refund
 from django.views.generic import ListView, DetailView, View
 from django.utils import timezone
@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 import random
 import string
 import stripe
-stripe.api_key = settings.STRIPE_SECRET_KEY
+stripe.api_key = ''
 # Create your views here.
 def create_ref_code():
     return ''.join(random.choices(string.ascii_lowercase + string.digits, k=20))
@@ -62,7 +62,6 @@ class CheckOutView(View):
                 apartment_address = form.cleaned_data.get('apartment_address')
                 country = form.cleaned_data.get('country')
                 zip = form.cleaned_data.get('zip')
-                save_info = form.cleaned_data.get('save_info')
                 payment_option = form.cleaned_data.get('payment_option')
                 address = Address(
                     user=self.request.user,
@@ -82,6 +81,9 @@ class CheckOutView(View):
                 else:
                     messages.warning(self.request, 'Invalid payment option selected')
                     return redirect('check-out')
+            else:
+                messages.info(self.request, 'save address for next time')
+                return redirect('check-out')
         except ObjectDoesNotExist:
             messages.warning(self.request, 'You do not have an active order')
             return redirect('order-summary')

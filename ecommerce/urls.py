@@ -1,8 +1,6 @@
 from django.urls import path
 from .views import HomeView, ProductView, add_to_cart, remove_from_cart, OrderSummary, add_single_item_to_cart,\
     remove_single_item_from_cart, CheckOutView, PaymentView, AddCoupon, RefundView
-from django.conf import settings
-from django.conf.urls.static import static
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('product/<slug>/', ProductView.as_view(), name='product'),
@@ -16,5 +14,3 @@ urlpatterns = [
     path('add_single_item_to_cart/<slug>/', add_single_item_to_cart, name='add-single-item-to-cart'),
     path('remove_single_item_from_cart/<slug>/', remove_single_item_from_cart, name='remove-single-item-from-cart')
 ]
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

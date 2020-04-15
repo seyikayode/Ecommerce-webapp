@@ -14,7 +14,6 @@ class CheckoutForm(forms.Form):
         'class': 'custom-select d-block w-100'
     }))
     zip = forms.CharField()
-    save_info = forms.BooleanField()
     payment_option = forms.ChoiceField(choices=PAYMENT_CHOICES)
 
 class CouponForm(forms.Form):
