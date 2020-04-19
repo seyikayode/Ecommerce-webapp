@@ -6,15 +6,13 @@
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/checkout-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/checkout-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/home-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/home-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/order-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/order-summary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/payment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/product-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/product-page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce_app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce_app/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce_app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_root/image/wp1971576-need-for-speed-rivals-wallpapers.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +45,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Hospital-Management-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../django-ecommerce-master" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -112,6 +110,15 @@
       <workItem from="1586908285486" duration="170000" />
       <workItem from="1586909382604" duration="453000" />
       <workItem from="1586910505084" duration="50000" />
+      <workItem from="1587056512387" duration="212000" />
+      <workItem from="1587117717466" duration="889000" />
+      <workItem from="1587203228838" duration="22000" />
+      <workItem from="1587203697281" duration="1940000" />
+      <workItem from="1587218335375" duration="25000" />
+      <workItem from="1587222343409" duration="1472000" />
+      <workItem from="1587226538073" duration="3710000" />
+      <workItem from="1587245916580" duration="116000" />
+      <workItem from="1587249697537" duration="139000" />
     </task>
     <servers />
   </component>

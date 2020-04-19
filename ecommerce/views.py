@@ -7,11 +7,12 @@ from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
+from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 import random
 import string
 import stripe
-stripe.api_key = ''
+stripe.api_key = settings.STRIPE_SECRET_KEY
 # Create your views here.
 def create_ref_code():
     return ''.join(random.choices(string.ascii_lowercase + string.digits, k=20))
@@ -77,7 +78,8 @@ class CheckOutView(View):
                 if payment_option == 'S':
                     return redirect('payment', payment_option='stripe')
                 elif payment_option == 'P':
-                    return redirect('payment', payment_option='paypal')
+                    messages.warning(self.request, 'Paypal not available, try using Stripe')
+                    return redirect('check-out')
                 else:
                     messages.warning(self.request, 'Invalid payment option selected')
                     return redirect('check-out')
@@ -298,6 +300,14 @@ class RefundView(View):
                 messages.info(self.request, 'This order does not exist')
                 return redirect('request-refund')
 
+class SearchView(ListView):
+    model = Item
+    template_name = 'ecommerce/search.html'
+    context_object_name = 'items'
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        object_list = Item.objects.filter(Q(title__icontains=query))
+        return object_list
 
 
 

@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 CATEGORY_CHOICES = (
     ('S', 'Shirt'),
-    ('OW', 'Out wear'),
-    ('SW', 'Sport wear')
+    ('OW', 'Outwear'),
+    ('SW', 'Sportwear')
 )
 LABEL_CHOICES = (
     ('P', 'primary'),
@@ -18,8 +18,8 @@ class Item(models.Model):
     title = models.CharField(max_length=100)
     price = models.FloatField()
     discount_price = models.FloatField(blank=True, null=True)
-    category = models.CharField(max_length=2, choices=CATEGORY_CHOICES)
-    label = models.CharField(max_length=1, choices=LABEL_CHOICES)
+    category = models.CharField(max_length=15, choices=CATEGORY_CHOICES)
+    label = models.CharField(max_length=15, choices=LABEL_CHOICES)
     slug = models.SlugField()
     description = models.TextField()
     image = models.ImageField(blank=True, null=True)

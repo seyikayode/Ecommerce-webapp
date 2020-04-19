@@ -2,9 +2,9 @@ from django import forms
 from django_countries.fields import CountryField
 from django_countries.widgets import CountrySelectWidget
 
-PAYMENT_CHOICES = (
+PAYMENT_CHOICE = (
     ('S', 'Stripe'),
-    ('P', 'PayPal')
+    ('P', 'paypal')
 )
 
 class CheckoutForm(forms.Form):
@@ -14,7 +14,7 @@ class CheckoutForm(forms.Form):
         'class': 'custom-select d-block w-100'
     }))
     zip = forms.CharField()
-    payment_option = forms.ChoiceField(choices=PAYMENT_CHOICES)
+    payment_option = forms.ChoiceField(choices=PAYMENT_CHOICE)
 
 class CouponForm(forms.Form):
     code = forms.CharField(widget=forms.TextInput(attrs={
