@@ -1,21 +1,25 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
-from .models import Item, Order, OrderItem, Address, Payment, Coupon, Refund
+import random
+import string
+import stripe
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, View
 from django.utils import timezone
-from .forms import CheckoutForm, CouponForm, RefundForm
 from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
-import random
-import string
-import stripe
+from .models import Item, Order, OrderItem, Address, Payment, Coupon, Refund
+from .forms import CheckoutForm, CouponForm, RefundForm
+
 stripe.api_key = settings.STRIPE_SECRET_KEY
 # Create your views here.
+
+
 def create_ref_code():
     return ''.join(random.choices(string.ascii_lowercase + string.digits, k=20))
+
 
 class HomeView(ListView):
     model = Item
@@ -23,9 +27,11 @@ class HomeView(ListView):
     context_object_name = 'items'
     paginate_by = 10
 
+
 class ProductView(DetailView):
     model = Item
     template_name = 'ecommerce/product-page.html'
+
 
 class OrderSummary(LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
@@ -38,6 +44,7 @@ class OrderSummary(LoginRequiredMixin, View):
         except ObjectDoesNotExist:
             messages.info(self.request, 'You do not have an active order')
             return redirect('/')
+
 
 class CheckOutView(View):
     def get(self, *args, **kwargs):
@@ -54,6 +61,7 @@ class CheckOutView(View):
         except ObjectDoesNotExist:
             messages.info(self.request, 'You do not have an active order')
             return redirect('check-out')
+
     def post(self, *args, **kwargs):
         form = CheckoutForm(self.request.POST or None)
         try:
@@ -61,15 +69,19 @@ class CheckOutView(View):
             if form.is_valid():
                 street_address = form.cleaned_data.get('street_address')
                 apartment_address = form.cleaned_data.get('apartment_address')
+                mobile = form.cleaned_data.get('mobile')
+                email = form.cleaned_data.get('email')
                 country = form.cleaned_data.get('country')
-                zip = form.cleaned_data.get('zip')
+                state = form.cleaned_data.get('state')
                 payment_option = form.cleaned_data.get('payment_option')
                 address = Address(
                     user=self.request.user,
                     street_address=street_address,
                     apartment_address=apartment_address,
+                    mobile=mobile,
+                    email=email,
                     country=country,
-                    zip=zip
+                    state=state
                 )
                 address.save()
                 order.address = address
@@ -83,12 +95,13 @@ class CheckOutView(View):
                 else:
                     messages.warning(self.request, 'Invalid payment option selected')
                     return redirect('check-out')
-            else:
-                messages.info(self.request, 'save address for next time')
-                return redirect('check-out')
+            # else:
+            #     messages.info(self.request, 'save address for next time')
+            #     return redirect('check-out')
         except ObjectDoesNotExist:
             messages.warning(self.request, 'You do not have an active order')
             return redirect('order-summary')
+
 
 class PaymentView(View):
     def get(self, *args, **kwargs):
@@ -102,6 +115,7 @@ class PaymentView(View):
         else:
             messages.warning(self.request, 'You have not added an address')
             return redirect('check-out')
+
     def post(self, *args, **kwargs):
         order = Order.objects.get(user=self.request.user, ordered=False)
         token = self.request.POST.get('stripeToken')
@@ -162,6 +176,7 @@ class PaymentView(View):
                 self.request, "A serious error occurred. We have been notified.")
             return redirect("/")
 
+
 @login_required
 def add_to_cart(request, slug):
     item = get_object_or_404(Item, slug=slug)
@@ -185,6 +200,7 @@ def add_to_cart(request, slug):
         messages.success(request, 'Item has been added to your cart')
         return redirect('product', slug=slug)
 
+
 @login_required
 def remove_from_cart(request, slug):
     item = get_object_or_404(Item, slug=slug)
@@ -202,6 +218,7 @@ def remove_from_cart(request, slug):
     else:
         messages.info(request, 'You do not have an active order')
         return redirect('product', slug=slug)
+
 
 @login_required
 def add_single_item_to_cart(request, slug):
@@ -226,6 +243,7 @@ def add_single_item_to_cart(request, slug):
         messages.success(request, 'Item has been added to your cart')
         return redirect('order-summary')
 
+
 @login_required
 def remove_single_item_from_cart(request, slug):
     item = get_object_or_404(Item, slug=slug)
@@ -248,6 +266,7 @@ def remove_single_item_from_cart(request, slug):
         messages.info(request, 'You do not have an active order')
         return redirect('order-summary')
 
+
 def get_coupon(request, code):
     try:
         coupon = Coupon.objects.get(code=code)
@@ -255,6 +274,8 @@ def get_coupon(request, code):
     except ObjectDoesNotExist:
         messages.info(request, 'This coupon does not exist')
         return redirect('check-out')
+
+
 class AddCoupon(View):
     def post(self, *args, **kwargs):
         form = CouponForm(self.request.POST or None)
@@ -270,6 +291,7 @@ class AddCoupon(View):
                 messages.info(self.request, 'You do not have an active order')
                 return redirect('check-out')
 
+
 class RefundView(View):
     def get(self, *args, **kwargs):
         form = RefundForm()
@@ -277,6 +299,7 @@ class RefundView(View):
             'form': form
         }
         return render(self.request, 'ecommerce/request-refund.html', context)
+
     def post(self, *args, **kwargs):
         form = RefundForm(self.request.POST)
         if form.is_valid():
@@ -300,10 +323,12 @@ class RefundView(View):
                 messages.info(self.request, 'This order does not exist')
                 return redirect('request-refund')
 
+
 class SearchView(ListView):
     model = Item
     template_name = 'ecommerce/search.html'
     context_object_name = 'items'
+
     def get_queryset(self):
         query = self.request.GET.get('q')
         object_list = Item.objects.filter(Q(title__icontains=query))

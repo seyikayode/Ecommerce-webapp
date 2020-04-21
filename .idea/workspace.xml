@@ -2,17 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36968fe0-46bb-4d32-98e4-ae93fbc6f7da" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ecommerce/migrations/0010_auto_20200419_1337.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce/migrations/0011_auto_20200419_1345.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce/migrations/0012_auto_20200419_1355.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce/migrations/0013_auto_20200420_1135.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce/migrations/0014_auto_20200420_1143.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/checkout-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/checkout-page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/home-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/home-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/order-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/order-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/payment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/product-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/product-page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce_app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce_app/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,6 +131,16 @@
       <workItem from="1587226538073" duration="3710000" />
       <workItem from="1587245916580" duration="116000" />
       <workItem from="1587249697537" duration="139000" />
+      <workItem from="1587295344005" duration="733000" />
+      <workItem from="1587299242235" duration="1807000" />
+      <workItem from="1587307711788" duration="18000" />
+      <workItem from="1587310960326" duration="7000" />
+      <workItem from="1587311587075" duration="15000" />
+      <workItem from="1587378746964" duration="741000" />
+      <workItem from="1587379739080" duration="12000" />
+      <workItem from="1587486655040" duration="1615000" />
+      <workItem from="1587488342836" duration="773000" />
+      <workItem from="1587491567655" duration="3602000" />
     </task>
     <servers />
   </component>
