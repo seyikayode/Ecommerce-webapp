@@ -4,5 +4,32 @@
       <div class="col-md-8 mt-4">
         <h4>You have successfully logged out. <a href="{% url 'login' %}">Login back here</a></h4>
       </div>
+     <div class="col-md-4">
+
+        <!-- Search Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">Search</h5>
+          <div class="card-body">
+              <form class="form-inline" action="{% url 'search' %}" method="GET">
+                  <input name="q" class="form-control mr-2" type="text" placeholder="Search" aria-label="Search">
+{#                  <button type="submit" class="btn btn-primary">Go</button>#}
+              </form>
+          </div>
+        </div>
+
+        <!-- Categories Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">About Us</h5>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-12">
+                  <p>
+                      KayMart is an Online Store where you order for any products you want.
+                  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+     </div>
     </div>
 {% endblock %}
