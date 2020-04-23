@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="36968fe0-46bb-4d32-98e4-ae93fbc6f7da" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/checkout-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/checkout-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/templates/ecommerce/order-snippet.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/templates/ecommerce/order-snippet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecommerce/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce_app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce_app/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -133,6 +126,7 @@
       <workItem from="1587582912738" duration="979000" />
       <workItem from="1587583924004" duration="181000" />
       <workItem from="1587592087749" duration="988000" />
+      <workItem from="1587600926009" duration="614000" />
     </task>
     <servers />
   </component>
