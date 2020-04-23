@@ -46,7 +46,7 @@ class OrderSummary(LoginRequiredMixin, View):
             return redirect('/')
 
 
-class CheckOutView(View):
+class CheckOutView(LoginRequiredMixin ,View):
     def get(self, *args, **kwargs):
         try:
             form = CheckoutForm()
@@ -73,7 +73,7 @@ class CheckOutView(View):
                 email = form.cleaned_data.get('email')
                 country = form.cleaned_data.get('country')
                 state = form.cleaned_data.get('state')
-                payment_option = form.cleaned_data.get('payment_option')
+                # payment_option = form.cleaned_data.get('payment_option')
                 address = Address(
                     user=self.request.user,
                     street_address=street_address,
@@ -86,15 +86,16 @@ class CheckOutView(View):
                 address.save()
                 order.address = address
                 order.save()
+                return redirect('payment')
 
-                if payment_option == 'S':
-                    return redirect('payment', payment_option='stripe')
-                elif payment_option == 'P':
-                    messages.warning(self.request, 'Paypal not available, try using Stripe')
-                    return redirect('check-out')
-                else:
-                    messages.warning(self.request, 'Invalid payment option selected')
-                    return redirect('check-out')
+                # if payment_option == 'S':
+                    # return redirect('payment', payment_option='stripe')
+                # elif payment_option == 'P':
+                    # messages.warning(self.request, 'Paypal not available, try using Stripe')
+                    # return redirect('check-out')
+                # else:
+                    # messages.warning(self.request, 'Invalid payment option selected')
+                    # return redirect('check-out')
             # else:
             #     messages.info(self.request, 'save address for next time')
             #     return redirect('check-out')
@@ -103,7 +104,7 @@ class CheckOutView(View):
             return redirect('order-summary')
 
 
-class PaymentView(View):
+class PaymentView(LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
         order = Order.objects.get(user=self.request.user, ordered=False)
         if order.address:
@@ -276,7 +277,7 @@ def get_coupon(request, code):
         return redirect('check-out')
 
 
-class AddCoupon(View):
+class AddCoupon(LoginRequiredMixin, View):
     def post(self, *args, **kwargs):
         form = CouponForm(self.request.POST or None)
         if form.is_valid():

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 import cloudinary
 import django_heroku
+import dj_database_url
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -145,3 +146,6 @@ os.makedirs('media_root', exist_ok=True)
 MEDIA_URL = '/media/'
 
 django_heroku.settings(locals())
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
