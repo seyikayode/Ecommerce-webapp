@@ -145,6 +145,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 os.makedirs('media_root', exist_ok=True)
 MEDIA_URL = '/media/'
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+)
+
 django_heroku.settings(locals())
 SECURE_SSL_REDIRECT = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
